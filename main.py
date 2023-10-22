@@ -9,3 +9,13 @@
 
 # The program should return new sentences with statitstics of ratio how many words was used from all sections 
 # (as for exmpale: long 25%,medium 45%, short 30%)
+
+def three_sentences_input():
+    word_dict = {}
+    three_sentences_string = input("Please enter three sentences: ")
+    words_string = three_sentences_string.strip(",.").lower()
+    three_sentences_with_no_dots = words_string.split(" ")
+    for word in three_sentences_with_no_dots:
+        word_dict[word] = word_dict.get(word, 0) + 1
+    return word_dict
+print(three_sentences_input())
